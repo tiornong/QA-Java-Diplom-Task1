@@ -26,10 +26,11 @@ public class GetReceiptTest {
         burger.setBuns(bun);
         burger.addIngredient(ingredient1);
 
-        String expectedReceipt = "(==== white bun ====)\n" +
-                "= sauce chili sauce =\n" +
-                "(==== white bun ====)\n\n" +
-                "Price: 400,000000\n";
+        String expectedReceipt = "(==== white bun ====)" + System.lineSeparator() +
+                "= sauce chili sauce =" + System.lineSeparator() +
+                "(==== white bun ====)" + System.lineSeparator() +
+                System.lineSeparator() +
+                "Price: 400,000000" + System.lineSeparator();
 
         Assert.assertEquals(expectedReceipt, burger.getReceipt());
     }
@@ -44,9 +45,10 @@ public class GetReceiptTest {
         Burger burger = new Burger();
         burger.setBuns(bun);
 
-        String expectedReceipt = "(==== black bun ====)\n" +
-                "(==== black bun ====)\n\n" +
-                "Price: 300,000000\n";
+        String expectedReceipt = "(==== black bun ====)" + System.lineSeparator() +
+                "(==== black bun ====)" + System.lineSeparator() +
+                System.lineSeparator() +
+                "Price: 300,000000" + System.lineSeparator();
 
         Assert.assertEquals(expectedReceipt, burger.getReceipt());
     }
